@@ -1,2 +1,23 @@
-alias e='emacs --no-splash -q -l /opt/user/emacs.el'
-alias ll='ls -l'
+export PS1="\W\$ "
+
+alias ll='ls -lah'
+alias cs=clear
+alias gs='git status'
+alias cds='cd /home/scratch.djuenger_sw'
+alias cdcuco='cd /home/scratch.djuenger_sw/cuCollections'
+alias cdcc='cd /home/scratch.djuenger_sw/cuCollections'
+
+git config --global user.email "djuenger@nvidia.com"
+git config --global user.name "Daniel Juenger"
+
+alias cuco-cmake-benchmarks="cmake .. -DBUILD_BENCHMARKS=YES -DBUILD_EXAMPLES=NO -DBUILD_TESTS=NO"
+alias cuco-cmake-examples="cmake .. -DBUILD_BENCHMARKS=NO -DBUILD_EXAMPLES=YES -DBUILD_TESTS=NO"
+alias cuco-cmake-tests="cmake .. -DBUILD_BENCHMARKS=NO -DBUILD_EXAMPLES=NO -DBUILD_TESTS=YES"
+
+export HISTFILE=/home/scratch.djuenger_sw/.docker_history
+export HISTCONTROL=ingoredups
+shopt -s histappend                      # append to history, don't overwrite it
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+cd /home/scratch.djuenger_sw
+
